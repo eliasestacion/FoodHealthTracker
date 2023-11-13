@@ -1,7 +1,7 @@
 package cisc191.sdmesa.edu;
 import java.util.ArrayList;
 
-public class Meal
+public class Meal 
 {
 	private String name;
 	private int calorieLimit;
