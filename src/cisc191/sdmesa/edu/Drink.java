@@ -21,7 +21,7 @@ public class Drink
 		return calorieAmount;
 	}
 	
-	void setFoodName(String newDrinkName)
+	void setDrinkName(String newDrinkName)
 	{
 		drinkName = newDrinkName;
 	}

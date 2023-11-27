@@ -1,4 +1,5 @@
 package cisc191.sdmesa.edu;
+import java.time.LocalDate;
 
 public class PersonStatistics 
 {
@@ -7,7 +8,8 @@ public class PersonStatistics
 	private double weightLoss;
 	private double targetWeight;
 	private double totalCalIntake;
-
+	private LocalDate currentDate;
+	
 	// Constructors
 	public PersonStatistics(String personName, double waterIntake, double weightLoss, double targetWeight, double totalCalIntake) 
 	{
@@ -16,6 +18,12 @@ public class PersonStatistics
 	this.weightLoss = weightLoss;
 	this.targetWeight = targetWeight;
 	this.totalCalIntake = totalCalIntake;
+	this.currentDate = LocalDate.now();
+	}
+	
+	public LocalDate getCurrentDate()
+	{
+		return currentDate;
 	}
 
 	    /**
@@ -30,6 +38,10 @@ public class PersonStatistics
 	
 	public void setPersonName(String personName)
 	{
+		if (personName == null || personName.trim().isEmpty())
+		{
+			throw new IllegalArgumentException("Person name cannot be null or empty.");
+		}
 		this.personName = personName;
 	}
 	

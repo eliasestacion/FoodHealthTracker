@@ -1,6 +1,6 @@
 package cisc191.sdmesa.edu;
 
-public class Food 
+public class Food implements Consumable
 {
 	int calorieAmount;
 	String foodName;
@@ -11,12 +11,12 @@ public class Food
 		this.foodName = foodName;
 	}
 	
-	String getFoodName()
+	public String getFoodName()
 	{
 		return foodName;
 	}
 	
-	int getCalorieAmount()
+	public int getCalorieAmount()
 	{
 		return calorieAmount;
 	}

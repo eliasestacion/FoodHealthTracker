@@ -36,11 +36,19 @@ public class Meal
 	
 	void setName(String newName)
 	{
+		if (newName == null || newName.trim().isEmpty())
+		{
+			throw new IllegalArgumentException("Meal name cannot be null or empty.");
+		}
 		name = newName;
 	}
 	
 	void setCalorieLimit(int newCalorieLimit)
 	{
+		if (newCalorieLimit < 0)
+		{
+			throw new IllegalArgumentException("Calorie limit must be more than 0.");
+		}
 		calorieLimit = newCalorieLimit;
 	}
 	
