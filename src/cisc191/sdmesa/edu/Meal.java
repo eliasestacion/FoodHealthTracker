@@ -29,9 +29,10 @@ public class Meal
 		return foodEaten;
 	}
 	
-	public void logFood(Food food)
+	public void logFood(Food food, MyHealthTrackerModel model)
 	{
 		foodEaten.add(food);
+		model.getPerson().updateTotalCalIntake(model);
 	}
 	
 	void setName(String newName)

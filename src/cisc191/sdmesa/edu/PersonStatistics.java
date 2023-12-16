@@ -5,31 +5,19 @@ public class PersonStatistics
 {
 	private String personName;
 	private double waterIntake;
-	private double weightLoss;
+	private double currentWeight;
 	private double targetWeight;
 	private double totalCalIntake;
-	private LocalDate currentDate;
 	
 	// Constructors
-	public PersonStatistics(String personName, double waterIntake, double weightLoss, double targetWeight, double totalCalIntake) 
+	public PersonStatistics(String personName, double currentWeight, double targetWeight) 
 	{
-	this.personName = personName;
-	this.waterIntake = waterIntake;
-	this.weightLoss = weightLoss;
-	this.targetWeight = targetWeight;
-	this.totalCalIntake = totalCalIntake;
-	this.currentDate = LocalDate.now();
+		this.personName = personName;
+		this.waterIntake = 0;
+		this.currentWeight = currentWeight;
+		this.targetWeight = targetWeight;
+		this.totalCalIntake = 0;
 	}
-	
-	public LocalDate getCurrentDate()
-	{
-		return currentDate;
-	}
-
-	    /**
-	     * Getter and setter methods
-	     * @return
-	     */
 	
 	public String getPersonName()
 	{
@@ -50,49 +38,60 @@ public class PersonStatistics
 		return waterIntake; 
 	}
 
-	public void setWaterIntake(double waterIntake) 
+	public void logWater() 
 	{
-	this.waterIntake = waterIntake;
+		// Add one cup of water each time
+		waterIntake += 1;
 	}
 
-	public double getWeightLoss() 
+	public double getCurrentWeight() 
 	{
-	return weightLoss;
+		return currentWeight;
 	}
 
-	public void setWeightLoss(double weightLoss) 
+	public void setCurrentWeight(double currentWeight) 
 	{
-	this.weightLoss = weightLoss;
+		this.currentWeight = currentWeight;
 	}
 
 	public double getTargetWeight() 
 	{
-	 return targetWeight;
+		return targetWeight;
 	}
 
 	public void setTargetWeight(double targetWeight) 
 	{
-	this.targetWeight = targetWeight;
+		this.targetWeight = targetWeight;
 	}
 
 	public double getTotalCalIntake() 
 	{
-	return totalCalIntake;
+		return totalCalIntake;
 	}
 
-	public void setTotalCalIntake(double totalCalIntake) 
+	public void updateTotalCalIntake(MyHealthTrackerModel model)  
 	{
-	this.totalCalIntake = totalCalIntake;
+		// Start with 0 calorie intake
+		Integer calIntake = 0;
+		
+		// Add each meal's total calorie amount to the calIntake var
+		for (Meal meal : model.getMeals()) {
+			for (Food food : meal.getFoodEaten()) {
+				calIntake += food.getCalorieAmount();
+			}
+		}
+		
+		// Assign new calIntake to totalCalIntake
+		totalCalIntake = calIntake;
 	}
 
 	public String toString() 
 	{
-	return "PersonsStats{" +
-	"personName = " + personName +
-	", waterIntake = " + waterIntake +
-	", weightLoss = " + weightLoss +
-	", targetWeight = " + targetWeight +
-	", totalCalIntake = " + totalCalIntake + '}';
+		return "PersonsStats{" +
+		"personName = " + personName +
+		", waterIntake = " + waterIntake +
+		", targetWeight = " + targetWeight +
+		", totalCalIntake = " + totalCalIntake + '}';
 	}
 
 }

@@ -17,14 +17,12 @@ public class Tester
 		
 		bagel.setCalorieAmount(80);
 		egg.setCalorieAmount(70);
-		breakfast.logFood(bagel);
-		breakfast.logFood(egg);
 		
 		System.out.println(breakfast);
 		System.out.println(breakfast.getFoodEaten()+"\n");
 		 
 		// Person's statistics tester
-		PersonStatistics personStats = new PersonStatistics("Elias", 2.0, 3.0, 70.0, 2500.0);
+		PersonStatistics personStats = new PersonStatistics("Elias", 100, 64);
 
 		// Displaying the initial statistics
 		System.out.println("Initial Person's Stats:");
@@ -32,10 +30,8 @@ public class Tester
 
 		// Modifying the statistics
 		personStats.setPersonName("Elias John");
-		personStats.setWaterIntake(3.0);
-		personStats.setWeightLoss(6.0);
 		personStats.setTargetWeight(68.0);
-		personStats.setTotalCalIntake(1600.0);
+	
 
 		// Displaying the modified statistics
 		System.out.println("\nModified Person's Stats:");

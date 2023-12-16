@@ -2,8 +2,9 @@ package cisc191.sdmesa.edu;
 
 public class Food implements Consumable
 {
-	int calorieAmount;
-	String foodName;
+	private int calorieAmount;
+	private String foodName;
+	private String category;
 
 	public Food(int calorieAmount, String foodName)
 	{
@@ -11,7 +12,7 @@ public class Food implements Consumable
 		this.foodName = foodName;
 	}
 	
-	public String getFoodName()
+	public String getName()
 	{
 		return foodName;
 	}
@@ -19,6 +20,11 @@ public class Food implements Consumable
 	public int getCalorieAmount()
 	{
 		return calorieAmount;
+	}
+	
+	public String getCategory()
+	{
+		return category;
 	}
 	
 	void setFoodName(String newFoodName)
@@ -31,6 +37,11 @@ public class Food implements Consumable
 		calorieAmount = newCalorieAmount;
 	}
 	
+	public void setCategory(String category) 
+	{
+        this.category = category;
+    }
+
 	public String toString()
 	{
 		return foodName + " " + calorieAmount;
