@@ -1,6 +1,6 @@
 package cisc191.sdmesa.edu;
 
-public class Drink 
+public class Drink implements Consumable
 {
 	int calorieAmount;
 	String drinkName;
@@ -11,22 +11,22 @@ public class Drink
 		this.drinkName = drinkName;
 	}
 	
-	String getDrinkName()
+	public String getName()
 	{
 		return drinkName;
 	}
 	
-	int getCalorieAmount()
+	public int getCalorieAmount()
 	{
 		return calorieAmount;
 	}
 	
-	void setDrinkName(String newDrinkName)
+	public void setDrinkName(String newDrinkName)
 	{
 		drinkName = newDrinkName;
 	}
 	
-	void setCalorieAmount(int newCalorieAmount)
+	public void setCalorieAmount(int newCalorieAmount)
 	{
 		calorieAmount = newCalorieAmount;
 	}
