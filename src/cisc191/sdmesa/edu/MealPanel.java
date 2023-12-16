@@ -8,12 +8,28 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
-public class MealPanel extends JPanel {
+/**
+ * Lead Author(s):
+ * @author Elias John Estacion; 5550145434
+ * 
+ * References:
+ * Morelli, R., & Walde, R. (2016). Java, Java, Java: Object-Oriented Problem Solving.
+ * Retrieved from https://open.umn.edu/opentextbooks/textbooks/java-java-java-object-oriented-problem-solving
+ * 
+ *  
+ * Version/date: 12/12/23
+ * 
+ * 
+ */
+
+public class MealPanel extends JPanel 
+{
 	private String mealName;
 	private JTextField foodTextField;
 	private JTextField calorieTextField;
 	
-	public MealPanel(String mealName) {
+	public MealPanel(String mealName) 
+	{
 		GridLayout layout = new GridLayout(2, 2);		
 		this.setLayout(layout);
 		this.mealName = mealName;
@@ -29,15 +45,18 @@ public class MealPanel extends JPanel {
 		this.add(calorieTextField);
 	}
 	
-	public String getMealName() {
+	public String getMealName() 
+	{
 		return mealName;
 	}
 	
-	public JTextField getFoodTextField() {
+	public JTextField getFoodTextField() 
+	{
 		return foodTextField;
 	}
 	
-	public JTextField getCalorieTextField() {
+	public JTextField getCalorieTextField() 
+	{
 		return calorieTextField;
 	}
 }

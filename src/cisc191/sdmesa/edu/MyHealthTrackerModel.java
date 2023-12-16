@@ -6,7 +6,22 @@ import java.io.PrintWriter;
 
 import javax.swing.JOptionPane;
 
-public class MyHealthTrackerModel {
+/**
+ * Lead Author(s):
+ * @author Elias John Estacion; 5550145434
+ * 
+ * References:
+ * Morelli, R., & Walde, R. (2016). Java, Java, Java: Object-Oriented Problem Solving.
+ * Retrieved from https://open.umn.edu/opentextbooks/textbooks/java-java-java-object-oriented-problem-solving
+ * 
+ *  
+ * Version/date: 12/12/23
+ * 
+ * 
+ */
+
+public class MyHealthTrackerModel 
+{
 	private PersonStatistics person;
 	private Meal[] meals;
 	private Meal breakfast = new Meal("Breakfast", 100);
@@ -24,35 +39,43 @@ public class MyHealthTrackerModel {
 		this.meals = new Meal[]{breakfast, lunch, dinner};
 	}
 	
-	public Meal[] getMeals() {
+	public Meal[] getMeals() 
+	{
 		return meals;
 	}
 	
-	public Meal getBreakfast() {
+	public Meal getBreakfast() 
+	{
 		return breakfast;
 	}
 	
-	public Meal getLunch() {
+	public Meal getLunch() 
+	{
 		return lunch;
 	}
 	
-	public Meal getDinner() {
+	public Meal getDinner() 
+	{
 		return dinner;
 	}
 	
-	public PersonStatistics getPerson() {
+	public PersonStatistics getPerson() 
+	{
 		return person;
 	}
 	
-	public void setBreakfastLimit(Integer limit) {
+	public void setBreakfastLimit(Integer limit) 
+	{
 		breakfast.setCalorieLimit(limit);
 	}
 	
-	public void setLunchLimit(Integer limit) {
+	public void setLunchLimit(Integer limit) 
+	{
 		lunch.setCalorieLimit(limit);
 	}
 	
-	public void setDinnerLimit(Integer limit) {
+	public void setDinnerLimit(Integer limit) 
+	{
 		dinner.setCalorieLimit(limit);
 	}
 	
@@ -62,9 +85,11 @@ public class MyHealthTrackerModel {
 		try (PrintWriter writer = new PrintWriter(new FileWriter("data.txt"))) 
 		{
 			// For each meal, loop through each food eaten and print info
-			for (Meal meal : meals) {
+			for (Meal meal : meals) 
+			{
 				writer.println(meal.getName());
-				for (Food food : meal.getFoodEaten()) {
+				for (Food food : meal.getFoodEaten()) 
+				{
 					writer.println(food.getName() + ": " + food.getCalorieAmount() + " cals");
 				}
 				writer.println("\n"); 	

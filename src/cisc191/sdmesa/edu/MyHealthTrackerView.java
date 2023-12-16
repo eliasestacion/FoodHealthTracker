@@ -7,7 +7,22 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class MyHealthTrackerView extends JFrame {
+/**
+ * Lead Author(s):
+ * @author Elias John Estacion; 5550145434
+ * 
+ * References:
+ * Morelli, R., & Walde, R. (2016). Java, Java, Java: Object-Oriented Problem Solving.
+ * Retrieved from https://open.umn.edu/opentextbooks/textbooks/java-java-java-object-oriented-problem-solving
+ * 
+ *  
+ * Version/date: 12/12/23
+ * 
+ * 
+ */
+
+public class MyHealthTrackerView extends JFrame 
+{
 	private JPanel personStatsPanel;
 	private MyHealthTrackerModel model;
 	private JPanel centerPanel;
@@ -24,7 +39,8 @@ public class MyHealthTrackerView extends JFrame {
 		this.centerPanel = new JPanel(new GridLayout(4, 1));
 		centerPanel.setBorder(new EmptyBorder(10, 10, 10, 10));
 		// For each meal, add a meal panel
-		for (Meal meal : model.getMeals()) {
+		for (Meal meal : model.getMeals()) 
+		{
 			centerPanel.add(new MealPanel(meal.getName()));
 		}
 
@@ -63,9 +79,11 @@ public class MyHealthTrackerView extends JFrame {
 	}
 
 	// Updates UI when called
-	public void updateUI() {
+	public void updateUI() 
+	{
 		// Center Panel
-		for (Component panel : centerPanel.getComponents()) {
+		for (Component panel : centerPanel.getComponents()) 
+		{
 			MealPanel mealPanel = (MealPanel) panel;
 			mealPanel.getFoodTextField().setText("");
 			mealPanel.getCalorieTextField().setText("");
@@ -77,13 +95,17 @@ public class MyHealthTrackerView extends JFrame {
 		((SidePanel) sidePanel).updateWaterIntakeLabel(model);
 	}
 
-	public JPanel getCenterPanel() {
+	public JPanel getCenterPanel() 
+	{
 		return centerPanel;
 	}
 
-	public static void main(String[] args) {
-		SwingUtilities.invokeLater(new Runnable() {
-			public void run() {
+	public static void main(String[] args) 
+	{
+		SwingUtilities.invokeLater(new Runnable()
+		{
+			public void run() 
+			{
 				new MyHealthTrackerView();
 			}
 		});

@@ -1,19 +1,48 @@
 package cisc191.sdmesa.edu;
 
 import java.awt.Color;
+/**
+ * Lead Author(s):
+ * @author Elias John Estacion; 5550145434
+ * 
+ * References:
+ * Morelli, R., & Walde, R. (2016). Java, Java, Java: Object-Oriented Problem Solving.
+ * Retrieved from https://open.umn.edu/opentextbooks/textbooks/java-java-java-object-oriented-problem-solving
+ * 
+ *  
+ * Version/date: 11/12/23
+ * 
+ * 
+ */
 import java.awt.GridLayout;
 
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
-public class SidePanel extends JPanel {
+/**
+ * Lead Author(s):
+ * @author Elias John Estacion; 5550145434
+ * 
+ * References:
+ * Morelli, R., & Walde, R. (2016). Java, Java, Java: Object-Oriented Problem Solving.
+ * Retrieved from https://open.umn.edu/opentextbooks/textbooks/java-java-java-object-oriented-problem-solving
+ * 
+ *  
+ * Version/date: 12/12/23
+ * 
+ * 
+ */
+
+public class SidePanel extends JPanel 
+{
 	
 	private JLabel targetWeightLabel;
 	private JLabel currentWeightLabel;
 	private JLabel calorieIntakeLabel;
 	private JLabel waterIntakeLabel;
 	
-	public SidePanel(MyHealthTrackerModel model) {
+	public SidePanel(MyHealthTrackerModel model) 
+	{
 		GridLayout layout = new GridLayout(5,2,2,2);	
 		PersonStatistics person = model.getPerson();
 		
@@ -36,15 +65,18 @@ public class SidePanel extends JPanel {
 		this.setBackground(Color.GREEN);
 	}
 	
-	public void updateCalorieIntakeLabel(MyHealthTrackerModel model) {
+	public void updateCalorieIntakeLabel(MyHealthTrackerModel model) 
+	{
 		calorieIntakeLabel.setText(model.getPerson().getTotalCalIntake() + " cals");
 	}
 	
-	public void updateTargetWeightLabel(MyHealthTrackerModel model) {
+	public void updateTargetWeightLabel(MyHealthTrackerModel model) 
+	{
 		targetWeightLabel.setText(model.getPerson().getTargetWeight() + " lbs");
 	}
 	
-	public void updateWaterIntakeLabel(MyHealthTrackerModel model) {
+	public void updateWaterIntakeLabel(MyHealthTrackerModel model) 
+	{
 		waterIntakeLabel.setText(model.getPerson().getWaterIntake() + " cups");
 	}
 }
